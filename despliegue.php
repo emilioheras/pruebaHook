@@ -1,26 +1,16 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    
-    <h1>Prueba hook</h1>
-    
-    <?php
+<?php
 
-        //Obtener los datos de GitHub.
-        $payload = json_decode($_POST['payload']);
+    //Obtener los datos de GitHub.
+    $payload = json_decode($_POST['payload']);
     
         
-        if ($payload->ref == "refs/heads/master") {
+    if ($payload->ref == "refs/heads/master") {
      
-           
-            echo "Hola script";
-        }  
- 
-    ?>
+        $out = shell_exec('echo "Estoy escribiendo en este archivo." >> README.md');   
+        
+    } 
+        
     
-</body>
-</html>
+    //var_dump($out);
+ 
+?>
