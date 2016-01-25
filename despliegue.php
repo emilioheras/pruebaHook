@@ -6,11 +6,11 @@
         
     if ($payload->ref == "refs/heads/master") {
      
-        $out = shell_exec('echo'.$payload->ref.' >> README.md');   
+        shell_exec('echo'.$payload->ref.' >> README.md');   
         
     }else{
         
-        $out = shell_exec('echo'.$payload->ref.' >> README.md');
+        shell_exec('echo'.$payload->ref.' >> README.md');
     } 
         
     
